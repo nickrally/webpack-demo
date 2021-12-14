@@ -12,6 +12,18 @@ module.exports = {
         test: /(\.css)$/,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(csv|tsv)$/i,
+        use: ["csv-loader"],
+      },
+      {
+        test: /\.xml$/i,
+        use: ["xml-loader"],
+      },
     ],
   },
 };
