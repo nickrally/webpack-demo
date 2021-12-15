@@ -1,9 +1,7 @@
-import _ from "lodash";
-
-function component() {
-  const element = document.createElement("div");
-  element.innerHTML = _.join(["Hello", "webpack", "!!!"], " ");
+async function getComponent() {
+  const element = cdocument.createElement("div");
+  const { default: _ } = await import("lodash");
+  element.innerHTML = _.join(["Hello", "webpack", "!!!!"], " ");
   return element;
 }
-
-document.body.appendChild(component());
+getComponent().then((component) => document.body.appendChild(component));
